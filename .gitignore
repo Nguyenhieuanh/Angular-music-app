@@ -1,11 +1,2 @@
-/.editorconfig
-/angular.json
-/browserslist
-/karma.conf.js
 /node_modules
-/package-lock.json
-/package.json
-/tsconfig.app.json
-/tsconfig.json
-/tsconfig.spec.json
-/tslint.json
+

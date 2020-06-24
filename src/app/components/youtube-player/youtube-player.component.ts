@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { ParamMap, ActivatedRoute } from '@angular/router';
 import { YoutubeService } from 'src/app/services/youtube.service';
@@ -9,7 +9,7 @@ import { DomSanitizer } from '@angular/platform-browser';
   templateUrl: './youtube-player.component.html',
   styleUrls: ['./youtube-player.component.css']
 })
-export class YoutubePlayerComponent implements OnInit {
+export class YoutubePlayerComponent implements OnInit, OnDestroy {
   song: any;
   sub: Subscription;
   constructor(
@@ -30,8 +30,7 @@ export class YoutubePlayerComponent implements OnInit {
     return this.domSanitizer.bypassSecurityTrustResourceUrl(url);
   }
 
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     this.sub.unsubscribe();
   }
-
 }
